@@ -40,4 +40,14 @@ const horizontals = Array(cells - 1)
   .fill(null)
   .map(() => Array(cells).fill(false));
 
-console.log(grid);
+const startRow = Math.floor(Math.random() * cells);
+const startColumn = Math.floor(Math.random() * cells);
+
+const stepThroughCell = (row, column) => {
+  //If I 've visited the cell at [row, column], then return
+  //Mark this cell as being visited
+  //Assemble randomly-ordered list of neighbors
+  //For each neighbor ...
+  //See if that neighbor is out of bounds
+};
+stepThroughCell(startRow, startColumn);
