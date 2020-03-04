@@ -117,7 +117,13 @@ horizontals.forEach((row, rowIndex) => {
       rowIndex * unitLengthY + unitLengthY,
       unitLengthX,
       5,
-      { label: "wall", isStatic: true }
+      {
+        label: "wall",
+        isStatic: true,
+        render: {
+          fillStyle: "red"
+        }
+      }
     );
     World.add(world, wall);
   });
@@ -133,7 +139,13 @@ verticals.forEach((row, rowIndex) => {
       rowIndex * unitLengthY + unitLengthY / 2,
       5,
       unitLengthY,
-      { label: "wall", isStatic: true }
+      {
+        label: "wall",
+        isStatic: true,
+        render: {
+          fillStyle: "red"
+        }
+      }
     );
     World.add(world, wall);
   });
@@ -145,14 +157,23 @@ const goal = Bodies.rectangle(
   height - unitLengthY / 2,
   unitLengthX * 0.7,
   unitLengthY * 0.7,
-  { label: "goal", isStatic: true }
+  {
+    label: "goal",
+    isStatic: true,
+    render: {
+      fillStyle: "magenta"
+    }
+  }
 );
 World.add(world, goal);
 
 //Ball
 const ballRadius = Math.min(unitLengthX, unitLengthY) / 4;
 const ball = Bodies.circle(unitLengthX / 2, unitLengthY / 2, ballRadius, {
-  label: "ball"
+  label: "ball",
+  render: {
+    fillStyle: "pink"
+  }
 });
 World.add(world, ball);
 
